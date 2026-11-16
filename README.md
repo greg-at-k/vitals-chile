@@ -26,4 +26,15 @@ The proposed scope includes GDP, headline and core inflation, the policy rate, a
 
 The assignment specifies 4–8 indicators. This expanded scope needs an explicit submission decision. Chart grouping and derived views will be documented transparently.
 
-Source metadata has been reviewed. Chile and US IMF CPI and Chile monthly FX sample requests succeeded on 16 November 2026. Authenticated Central Bank downloads, fiscal workbook parsing, and sovereign-risk access remain to be checked.
+Authenticated BCCh checks retrieved 16 of 18 candidate series on 16 November 2026. The two rejected country-export codes need an alternative current source. Chile and US IMF CPI and Chile monthly FX sample requests also succeeded. Sovereign-risk access remains unresolved. See the [source audit](docs/source-audit.md).
+
+## Run the source checks locally
+
+The local research environment loads `BCCH_API_TOKEN` from `.env` when it is absent from the process environment. Install the research dependencies, then run the source check.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r research/requirements.txt
+.\.venv\Scripts\python.exe research/check_bcch_sources.py
+```
+
+The current audit reports `needs_attention` while the two country-export candidates fail. Its JSON output includes coverage, observation samples, and public status information. The manually triggered [GitHub source audit](https://github.com/greg-at-k/vitals-chile/actions/workflows/source-audit.yml) uses the repository secret.

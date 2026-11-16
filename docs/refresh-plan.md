@@ -25,7 +25,7 @@ The proposed first implementation stores compact normalized data and a manifest 
 
 ## Private API token
 
-The user has created the repository secret `BCCH_API_TOKEN`. Its existence was confirmed through a metadata-only listing. The stored value has not been retrieved into this workspace.
+The user has created the repository secret `BCCH_API_TOKEN`. Its existence was confirmed through a metadata-only listing. The user subsequently added the token to the gitignored local `.env` for local source testing. Source-check processes load it without including its value in public output.
 
 The job will pass the secret to the download process as an environment variable. BDE's documented REST authentication includes a token parameter in the request. Request errors and diagnostic output must omit authenticated URLs. Public logs and artifacts will contain whitelisted source identifiers, dates, values, and status summaries. [BDE API documentation](https://si3.bcentral.cl/estadisticas/Principal1/Web_Services/documentacion_en.html)
 
@@ -35,13 +35,13 @@ A local `.env` is optional for running the authenticated downloader locally. A f
 
 ## Source feasibility checks
 
-First prepare a manually triggered GitHub Actions source audit. It will test authentication, inspect available series metadata, and retrieve observations for the catalog's candidates. Its output will report source coverage and failures. This audit will supply planning evidence before the dashboard is deployed.
+A manually triggered GitHub Actions source audit and a local source-check command now test authentication, inspect available series metadata, and retrieve observations for the catalog's candidates. The [audit results](source-audit.md) identify successful downloads and rejected country-export candidates.
 
 The source audit differs from the eventual scheduled dashboard refresh in its completion criteria. A source-audit result establishes access and candidate-series behavior. The completed dashboard needs an end-to-end refresh that publishes a validated dataset and updates its charts.
 
 ## Proposed schedule
 
-Run the completed downloader daily at 11:17 and 23:17 UTC, with an additional manual trigger. The two attempts give monthly and quarterly releases regular coverage while allowing market data to update during the day. They are provisional choices for review.
+Proposed schedule for the completed downloader is daily at 23:17 UTC, with an additional manual trigger. This gives monthly and quarterly releases regular coverage and records a daily check of market data. The time remains a choice for review. The assignment explicitly requests a regular refresh schedule.
 
 Scheduled GitHub Actions can be delayed, so the app will report actual successful retrieval times. The workflow should use one concurrency group to serialize publication. [GitHub schedule behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 
@@ -60,6 +60,10 @@ For the yield curve, choose the latest date with observations for all selected m
 An unchanged dataset after a successful source request is a successful refresh. Record both the check time and whether observations or values changed. A failed retrieval retains its previous successful retrieval timestamp.
 
 ## Local and hosted testing
+
+The public Streamlit deployment remains the selected target. Streamlit runs a Python backend, which can call data sources when a reader requests a refresh. The data branch in GitHub supplies durable saved datasets, while Streamlit's cache holds a working copy. [Streamlit architecture](https://docs.streamlit.io/develop/concepts/architecture/architecture), [Caching](https://docs.streamlit.io/develop/concepts/architecture/caching)
+
+The manual controls must state what they do. Reloading the latest published dataset can be handled inside the app. Requesting a new upstream download can use the GitHub workflow's manual trigger. An in-app button that starts that workflow would require a suitably scoped GitHub credential in Streamlit's private secrets. This button's implementation remains part of design review.
 
 The planned app can run locally with Streamlit after the first public dataset is published. Local tests will exercise chart rendering, date filters, downloads, benchmark changes, missing-data displays, and source details using those public data.
 

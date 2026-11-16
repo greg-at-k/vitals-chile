@@ -1,0 +1,1267 @@
+{
+  "purpose": "Source feasibility audit for dashboard planning",
+  "started_at_utc": "2026-11-16T23:34:45+00:00",
+  "completed_at_utc": "2026-11-16T23:35:20+00:00",
+  "status": "needs_attention",
+  "requested_start": "2010-01-01",
+  "requested_end": "2026-11-16",
+  "catalog_checks": [
+    {
+      "frequency": "DAILY",
+      "status": "success",
+      "series_count": 1871
+    },
+    {
+      "frequency": "MONTHLY",
+      "status": "success",
+      "series_count": 9194
+    },
+    {
+      "frequency": "QUARTERLY",
+      "status": "success",
+      "series_count": 8782
+    }
+  ],
+  "series_checks": [
+    {
+      "name": "real_gdp",
+      "series_id": "F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T",
+      "metadata": {
+        "seriesId": "F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "PIB, volumen a precios del a\u00f1o anterior encadenado, referencia 2018 (miles de millones de pesos encadenados)",
+        "englishTitle": "GDP, chained volume at previous year prices, reference 2018, linked series (billions of chained-pesos)",
+        "firstObservation": "01-01-1996",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "18-08-2026"
+      },
+      "status": "success",
+      "valid_observations": 66,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-04-01",
+      "source_status_counts": {
+        "OK": 66
+      },
+      "sample_observations": [
+        {
+          "date": "2025-04-01",
+          "value": 53309.877468848
+        },
+        {
+          "date": "2025-07-01",
+          "value": 51876.344987102
+        },
+        {
+          "date": "2025-10-01",
+          "value": 57246.764686601
+        },
+        {
+          "date": "2026-01-01",
+          "value": 53040.1206256171
+        },
+        {
+          "date": "2026-04-01",
+          "value": 53210.5539973709
+        }
+      ]
+    },
+    {
+      "name": "headline_inflation",
+      "series_id": "G073.IPC.V12.2023.M",
+      "metadata": {
+        "seriesId": "G073.IPC.V12.2023.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "General (empalme BCCh) | IPC Anal\u00edticos, variaci\u00f3n anual empalmada BCCh, base 2023 = 100 | Mensual",
+        "englishTitle": "Headline (CBC slicing) | CPI Analytics, annual variation spliced information CBC, base 2023 = 100 | Monthly",
+        "firstObservation": "01-12-1999",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "06-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 202,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-10-01",
+      "source_status_counts": {
+        "OK": 202
+      },
+      "sample_observations": [
+        {
+          "date": "2026-06-01",
+          "value": 4.33611581705455
+        },
+        {
+          "date": "2026-07-01",
+          "value": 3.52112990427294
+        },
+        {
+          "date": "2026-08-01",
+          "value": 4.12746701097232
+        },
+        {
+          "date": "2026-09-01",
+          "value": 4.06987177520521
+        },
+        {
+          "date": "2026-10-01",
+          "value": 4.52297514281983
+        }
+      ]
+    },
+    {
+      "name": "core_inflation",
+      "series_id": "G073.IPCSV.V12.2023.M",
+      "metadata": {
+        "seriesId": "G073.IPCSV.V12.2023.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Sin vol\u00e1tiles | IPC Anal\u00edticos, variaci\u00f3n anual empalmada BCCh, base 2023 = 100 | Mensual",
+        "englishTitle": "Without volatile | CPI Analytics, annual variation spliced information CBC, base 2023 = 100 | Monthly",
+        "firstObservation": "01-12-1999",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "06-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 202,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-10-01",
+      "source_status_counts": {
+        "OK": 202
+      },
+      "sample_observations": [
+        {
+          "date": "2026-06-01",
+          "value": 3.38638312986205
+        },
+        {
+          "date": "2026-07-01",
+          "value": 3.2115004310816
+        },
+        {
+          "date": "2026-08-01",
+          "value": 3.29597727537248
+        },
+        {
+          "date": "2026-09-01",
+          "value": 3.1924263464074
+        },
+        {
+          "date": "2026-10-01",
+          "value": 3.28719187596541
+        }
+      ]
+    },
+    {
+      "name": "policy_rate",
+      "series_id": "F022.TPM.TIN.D001.NO.Z.D",
+      "metadata": {
+        "seriesId": "F022.TPM.TIN.D001.NO.Z.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Tasa de pol\u00edtica monetaria (TPM) (porcentaje)",
+        "englishTitle": "Monetary policy rate (MPR) (percentage)",
+        "firstObservation": "07-02-1997",
+        "lastObservation": "17-11-2026",
+        "updatedAt": "16-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 4204,
+      "first_valid_date_in_requested_sample": "2010-01-04",
+      "latest_valid_date": "2026-11-16",
+      "source_status_counts": {
+        "OK": 4204,
+        "ND": 1957
+      },
+      "sample_observations": [
+        {
+          "date": "2026-11-10",
+          "value": 4.5
+        },
+        {
+          "date": "2026-11-11",
+          "value": 4.5
+        },
+        {
+          "date": "2026-11-12",
+          "value": 4.5
+        },
+        {
+          "date": "2026-11-13",
+          "value": 4.5
+        },
+        {
+          "date": "2026-11-16",
+          "value": 4.5
+        }
+      ]
+    },
+    {
+      "name": "nominal_bond_2y",
+      "series_id": "F022.BCLP.TIS.AN02.NO.Z.D",
+      "metadata": {
+        "seriesId": "F022.BCLP.TIS.AN02.NO.Z.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Tasa de inter\u00e9s mercado secundario de los bonos licitados por el BCCh (BCP) a 2 a\u00f1os",
+        "englishTitle": "2-year interest rate secondary market, bonds, in pesos (BCP)",
+        "firstObservation": "12-09-2002",
+        "lastObservation": "11-11-2026",
+        "updatedAt": "16-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 2917,
+      "first_valid_date_in_requested_sample": "2010-01-04",
+      "latest_valid_date": "2026-11-11",
+      "source_status_counts": {
+        "OK": 2917,
+        "ND": 3239
+      },
+      "sample_observations": [
+        {
+          "date": "2026-11-04",
+          "value": 5.12
+        },
+        {
+          "date": "2026-11-05",
+          "value": 5.13
+        },
+        {
+          "date": "2026-11-06",
+          "value": 5.05
+        },
+        {
+          "date": "2026-11-09",
+          "value": 5.06
+        },
+        {
+          "date": "2026-11-11",
+          "value": 5.1
+        }
+      ]
+    },
+    {
+      "name": "nominal_bond_5y",
+      "series_id": "F022.BCLP.TIS.AN05.NO.Z.D",
+      "metadata": {
+        "seriesId": "F022.BCLP.TIS.AN05.NO.Z.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Tasa de inter\u00e9s mercado secundario de los bonos licitados por el BCCh (BCP) a 5 a\u00f1os",
+        "englishTitle": "5-year interest rate secondary market, bonds, in pesos (BCP)",
+        "firstObservation": "12-09-2002",
+        "lastObservation": "12-11-2026",
+        "updatedAt": "16-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 3689,
+      "first_valid_date_in_requested_sample": "2010-01-04",
+      "latest_valid_date": "2026-11-12",
+      "source_status_counts": {
+        "OK": 3689,
+        "ND": 2468
+      },
+      "sample_observations": [
+        {
+          "date": "2026-11-06",
+          "value": 5.59
+        },
+        {
+          "date": "2026-11-09",
+          "value": 5.53
+        },
+        {
+          "date": "2026-11-10",
+          "value": 5.55
+        },
+        {
+          "date": "2026-11-11",
+          "value": 5.59
+        },
+        {
+          "date": "2026-11-12",
+          "value": 5.65
+        }
+      ]
+    },
+    {
+      "name": "nominal_bond_10y",
+      "series_id": "F022.BCLP.TIS.AN10.NO.Z.D",
+      "metadata": {
+        "seriesId": "F022.BCLP.TIS.AN10.NO.Z.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Tasa de inter\u00e9s mercado secundario de los bonos licitados por el BCCh (BCP) a 10 a\u00f1os",
+        "englishTitle": "10-year interest rate secondary market, bonds, in pesos (BCP)",
+        "firstObservation": "15-07-2004",
+        "lastObservation": "12-11-2026",
+        "updatedAt": "16-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 3953,
+      "first_valid_date_in_requested_sample": "2010-01-04",
+      "latest_valid_date": "2026-11-12",
+      "source_status_counts": {
+        "OK": 3953,
+        "ND": 2204
+      },
+      "sample_observations": [
+        {
+          "date": "2026-11-05",
+          "value": 5.95
+        },
+        {
+          "date": "2026-11-06",
+          "value": 5.95
+        },
+        {
+          "date": "2026-11-09",
+          "value": 5.92
+        },
+        {
+          "date": "2026-11-10",
+          "value": 5.93
+        },
+        {
+          "date": "2026-11-12",
+          "value": 6.01
+        }
+      ]
+    },
+    {
+      "name": "inflation_compensation_5y",
+      "series_id": "F022.BOSP.TAS.AN05.Z.Z.D",
+      "metadata": {
+        "seriesId": "F022.BOSP.TAS.AN05.Z.Z.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Compensaci\u00f3n inflacionaria bonos BCCh , Spot 5 a\u00f1os",
+        "englishTitle": "Inflation compensation Bonds CBCh - Spot 5 years",
+        "firstObservation": "12-09-2002",
+        "lastObservation": "16-11-2026",
+        "updatedAt": "16-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 3824,
+      "first_valid_date_in_requested_sample": "2010-01-04",
+      "latest_valid_date": "2026-11-16",
+      "source_status_counts": {
+        "OK": 3824,
+        "ND": 2337
+      },
+      "sample_observations": [
+        {
+          "date": "2026-11-06",
+          "value": 3.3299489524919
+        },
+        {
+          "date": "2026-11-09",
+          "value": 3.25960007008312
+        },
+        {
+          "date": "2026-11-10",
+          "value": 3.18752798608126
+        },
+        {
+          "date": "2026-11-11",
+          "value": 3.16681981236815
+        },
+        {
+          "date": "2026-11-16",
+          "value": 3.20601055065461
+        }
+      ]
+    },
+    {
+      "name": "copper",
+      "series_id": "F019.PPB.PRE.40.M",
+      "metadata": {
+        "seriesId": "F019.PPB.PRE.40.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Precio del cobre refinado BML (d\u00f3lares/libra) (valores referenciales, obtenidas de fuentes internacionales para apoyo al an\u00e1lisis econ\u00f3mico)",
+        "englishTitle": "BML price of refined copper (dollars/pound)(reference values, obtained from international sources to support economic analysis)",
+        "firstObservation": "01-01-1960",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "04-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 202,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-10-01",
+      "source_status_counts": {
+        "OK": 202
+      },
+      "sample_observations": [
+        {
+          "date": "2026-06-01",
+          "value": 6.15721530241039
+        },
+        {
+          "date": "2026-07-01",
+          "value": 6.13492121091163
+        },
+        {
+          "date": "2026-08-01",
+          "value": 6.51060046629351
+        },
+        {
+          "date": "2026-09-01",
+          "value": 6.56956300859105
+        },
+        {
+          "date": "2026-10-01",
+          "value": 6.59182988451525
+        }
+      ]
+    },
+    {
+      "name": "observed_usd",
+      "series_id": "F073.TCO.PRE.Z.D",
+      "metadata": {
+        "seriesId": "F073.TCO.PRE.Z.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Tipo de cambio nominal (d\u00f3lar observado $CLP/USD)\\ tipo de cambio \\ precio \\ diario \\ BCCh",
+        "englishTitle": "Nominal exchange rate (Observed dollar $CLP/USD) \\ exchange rate \\ price \\ daily \\ CBC",
+        "firstObservation": "09-08-1982",
+        "lastObservation": "17-11-2026",
+        "updatedAt": "16-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 4203,
+      "first_valid_date_in_requested_sample": "2010-01-04",
+      "latest_valid_date": "2026-11-16",
+      "source_status_counts": {
+        "OK": 4203,
+        "ND": 1958
+      },
+      "sample_observations": [
+        {
+          "date": "2026-11-10",
+          "value": 969.8
+        },
+        {
+          "date": "2026-11-11",
+          "value": 977.05
+        },
+        {
+          "date": "2026-11-12",
+          "value": 984.49
+        },
+        {
+          "date": "2026-11-13",
+          "value": 992.48
+        },
+        {
+          "date": "2026-11-16",
+          "value": 999.1
+        }
+      ]
+    },
+    {
+      "name": "trade_balance_candidate",
+      "series_id": "F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M",
+      "metadata": {
+        "seriesId": "F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Saldo Balanza Comercial (millones de d\u00f3lares)",
+        "englishTitle": "Trade Balance (millions of dollars)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 202,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-10-01",
+      "source_status_counts": {
+        "OK": 202
+      },
+      "sample_observations": [
+        {
+          "date": "2026-06-01",
+          "value": 3412.7208832
+        },
+        {
+          "date": "2026-07-01",
+          "value": 1990.3619542
+        },
+        {
+          "date": "2026-08-01",
+          "value": 1688.1967884
+        },
+        {
+          "date": "2026-09-01",
+          "value": 2047.4339097
+        },
+        {
+          "date": "2026-10-01",
+          "value": 2552.4273458
+        }
+      ]
+    },
+    {
+      "name": "exports_china",
+      "series_id": "F068.B1.FLU.Z.0.C.N.Z.Z.CN.Z.6.0.M",
+      "status": "failed",
+      "error": "API returned response code -50"
+    },
+    {
+      "name": "exports_us",
+      "series_id": "F068.B1.FLU.Z.0.C.N.Z.Z.US.Z.6.0.M",
+      "status": "failed",
+      "error": "API returned response code -50"
+    },
+    {
+      "name": "exports_total",
+      "series_id": "F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M",
+      "metadata": {
+        "seriesId": "F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes , exportaciones (mensual)",
+        "englishTitle": "Exports FOB (millions of dollars)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 202,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-10-01",
+      "source_status_counts": {
+        "OK": 202
+      },
+      "sample_observations": [
+        {
+          "date": "2026-06-01",
+          "value": 10991.435722
+        },
+        {
+          "date": "2026-07-01",
+          "value": 10248.35565
+        },
+        {
+          "date": "2026-08-01",
+          "value": 9499.4906647
+        },
+        {
+          "date": "2026-09-01",
+          "value": 10584.448884
+        },
+        {
+          "date": "2026-10-01",
+          "value": 10287.295785
+        }
+      ]
+    },
+    {
+      "name": "general_government_balance",
+      "series_id": "F051.B04.FLU.G.C.CLP.T",
+      "metadata": {
+        "seriesId": "F051.B04.FLU.G.C.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Gobierno general total, pr\u00e9stamo neto, endeudamiento neto, devengado",
+        "englishTitle": "Totaly Central Government, net loan/net indebtedness",
+        "firstObservation": "01-10-1990",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "01-10-2026"
+      },
+      "status": "success",
+      "valid_observations": 45,
+      "first_valid_date_in_requested_sample": "2010-10-01",
+      "latest_valid_date": "2026-04-01",
+      "source_status_counts": {
+        "OK": 45,
+        "ND": 18
+      },
+      "sample_observations": [
+        {
+          "date": "2025-04-01",
+          "value": -2084818.066087
+        },
+        {
+          "date": "2025-07-01",
+          "value": -2395658.097253
+        },
+        {
+          "date": "2025-10-01",
+          "value": -3229532.31310335
+        },
+        {
+          "date": "2026-01-01",
+          "value": -1697796.3658622
+        },
+        {
+          "date": "2026-04-01",
+          "value": -395575.263427086
+        }
+      ]
+    },
+    {
+      "name": "general_government_debt",
+      "series_id": "F051.F2.STO.G.Z.CLP.T",
+      "metadata": {
+        "seriesId": "F051.F2.STO.G.Z.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Gobierno General, deuda bruta",
+        "englishTitle": "General Government, gross debt",
+        "firstObservation": "01-01-2008",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "02-11-2026"
+      },
+      "status": "success",
+      "valid_observations": 66,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-04-01",
+      "source_status_counts": {
+        "OK": 66
+      },
+      "sample_observations": [
+        {
+          "date": "2025-04-01",
+          "value": 138769645.207042
+        },
+        {
+          "date": "2025-07-01",
+          "value": 143416178.869412
+        },
+        {
+          "date": "2025-10-01",
+          "value": 141228653.113487
+        },
+        {
+          "date": "2026-01-01",
+          "value": 147410340.47782
+        },
+        {
+          "date": "2026-04-01",
+          "value": 151945979.832225
+        }
+      ]
+    },
+    {
+      "name": "nominal_gdp",
+      "series_id": "F032.PIB.FLU.N.CLP.EP18.Z.Z.0.T",
+      "metadata": {
+        "seriesId": "F032.PIB.FLU.N.CLP.EP18.Z.Z.0.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "PIB a precios corrientes; series empalmadas, referencia 2018; nominal; flujo; trimestral; miles de millones de pesos; BCCh",
+        "englishTitle": "GDP, at current prices; linked series, reference 2018; nominal; flows; quarterly; billions of pesos; CBC; not seasonally adjusted",
+        "firstObservation": "01-01-1996",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "18-08-2026"
+      },
+      "status": "success",
+      "valid_observations": 66,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-04-01",
+      "source_status_counts": {
+        "OK": 66
+      },
+      "sample_observations": [
+        {
+          "date": "2025-04-01",
+          "value": 82873.225893431
+        },
+        {
+          "date": "2025-07-01",
+          "value": 82692.580110754
+        },
+        {
+          "date": "2025-10-01",
+          "value": 92447.736429364
+        },
+        {
+          "date": "2026-01-01",
+          "value": 89510.9085678189
+        },
+        {
+          "date": "2026-04-01",
+          "value": 88508.9588954856
+        }
+      ]
+    },
+    {
+      "name": "general_government_balance_ratio",
+      "series_id": "F038.CNF.PPB2.20.10.N.2018.CLP.T",
+      "metadata": {
+        "seriesId": "F038.CNF.PPB2.20.10.N.2018.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad/Necesidad de financiamiento, ratios del gobierno general, referencia 2018 (porcentaje sobre el pib, promedio m\u00f3vil anual), nominal, ratio trimestral, porcentaje, no desestacionalizado",
+        "englishTitle": "Net lending / Net borrowing, ratios of general government, reference 2018 (percentage of gdp, annual moving average), nominal, ratio quarterly, percentage, not seasonally adjusted",
+        "firstObservation": "01-10-2003",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "06-10-2026"
+      },
+      "status": "success",
+      "valid_observations": 66,
+      "first_valid_date_in_requested_sample": "2010-01-01",
+      "latest_valid_date": "2026-04-01",
+      "source_status_counts": {
+        "OK": 66
+      },
+      "sample_observations": [
+        {
+          "date": "2025-04-01",
+          "value": -2.3441
+        },
+        {
+          "date": "2025-07-01",
+          "value": -2.1224
+        },
+        {
+          "date": "2025-10-01",
+          "value": -2.5323
+        },
+        {
+          "date": "2026-01-01",
+          "value": -2.5808
+        },
+        {
+          "date": "2026-04-01",
+          "value": -1.9853
+        }
+      ]
+    }
+  ],
+  "additional_candidates": {
+    "sovereign_risk": [
+      {
+        "seriesId": "F089.EOF.FI_TC_RP.MS.D",
+        "frequencyCode": "DAILY",
+        "spanishTitle": "Evoluci\u00f3n encuesta de operadores financieros (EOF), Factores de incidencia en Tipo de Cambio: Riesgo pa\u00eds",
+        "englishTitle": "Evolution survey of financial operators (EOF), Factor's Impact in Exchange Rate: Country\u2019s risk",
+        "firstObservation": "07-10-2021",
+        "lastObservation": "22-10-2026",
+        "updatedAt": "22-10-2026"
+      }
+    ],
+    "general_government_fiscal": [
+      {
+        "seriesId": "F051.B04.FLU.G.C.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Gobierno general total, pr\u00e9stamo neto, endeudamiento neto, devengado",
+        "englishTitle": "Totaly Central Government, net loan/net indebtedness",
+        "firstObservation": "01-10-1990",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "01-10-2026"
+      },
+      {
+        "seriesId": "F051.F2.STO.G.Z.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Gobierno General, deuda bruta",
+        "englishTitle": "General Government, gross debt",
+        "firstObservation": "01-01-2008",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "02-11-2026"
+      },
+      {
+        "seriesId": "F038.999.FLU.20.10.N.2008.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general, referencia 2008",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of general government, reference 2008 (millions of pesos)",
+        "firstObservation": "01-10-2002",
+        "lastObservation": "01-07-2016",
+        "updatedAt": "19-01-2017"
+      },
+      {
+        "seriesId": "F038.999.FLU.20.10.N.2013.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general, referencia 2013 (miles de millones de pesos)",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of general government, reference 2013 (billions of pesos) (millions of pesos)",
+        "firstObservation": "01-10-2002",
+        "lastObservation": "01-07-2021",
+        "updatedAt": "06-01-2022"
+      },
+      {
+        "seriesId": "F038.999.FLU.20.10.N.2018.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "II. Capacidad (+) / Necesidad (-) de financiamiento (I-III), Cuenta financiera del gobierno general, operaciones financieras, referencia 2018 , nominal, flujo trimestral, miles de millones de pesos, no desestacionalizado",
+        "englishTitle": "II. Net lending (+) / Net borrowing (-) (I-III), Financial account of the general government, financial transactions, reference 2018 , nominal, turnover quarterly, billions of pesos, not seasonally adjusted",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "06-10-2026"
+      },
+      {
+        "seriesId": "F038.CNF.FLU.20.10.N.2003.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of the general government",
+        "firstObservation": "01-01-2005",
+        "lastObservation": "01-07-2011",
+        "updatedAt": "09-01-2015"
+      },
+      {
+        "seriesId": "F038.CNF.FLU.20.10.N.2008.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general, referencia 2008",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of the general government, reference 2008",
+        "firstObservation": "01-10-2002",
+        "lastObservation": "01-07-2016",
+        "updatedAt": "19-01-2017"
+      },
+      {
+        "seriesId": "F038.CNF.FLU.20.10.N.2013.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general, referencia 2013 (miles de millones de pesos)",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of the general government, reference 2013 (billions of pesos)",
+        "firstObservation": "01-10-2002",
+        "lastObservation": "01-07-2021",
+        "updatedAt": "06-01-2022"
+      },
+      {
+        "seriesId": "F038.CNF.FLU.20.10.N.2018.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad (+) / Necesidad (-) de financiamiento|Operaciones no financieras del sector gobierno general, econom\u00eda nacional, cuentas no finaniceras|Cuentas Nacionales|Trimestral|Miles de millones de pesos|Flujo|Banco Central de Chile|Original|Referencia 201",
+        "englishTitle": "Net lending (+) / Net borrowing (-)|Non-financial transactions of the general government sector|Cuentas Nacionales|Quarterly|Billions of pesos|Turnover|Central Bank of Chile|Original|Reference 2030",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "06-10-2026"
+      },
+      {
+        "seriesId": "F038.CNF.FLUD.20.10.N.2013.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad/Necesidad de Financiamiento, desestacionalizado,  Operaciones no financieras del sector gobierno general, referencia 2013 (miles de millones de pesos)",
+        "englishTitle": "Net lending (+) / Net borrowing (-), seasonally adjusted,  Non-financial transactions of the general government sector, reference 2013 (billions of pesos)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-07-2021",
+        "updatedAt": "06-01-2022"
+      },
+      {
+        "seriesId": "F038.CNF.FLUD.20.10.N.2018.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad/Necesidad de Financiamiento, operaciones no financieras del sector gobierno general, referencia 2018, nominal, flujo trimestral, miles de millones de pesos, desestacionalizado",
+        "englishTitle": "Net lending (+) / Net borrowing (-), non-financial transactions of the general government sector, reference 2018 , nominal, turnover quarterly, billions of pesos, seasonally adjusted",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "06-10-2026"
+      },
+      {
+        "seriesId": "F038.CNF.PPB2.20.10.N.2008.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general  (porcentaje del PIB referencia 2008)",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of general government   (percentage of GDP reference 2008)",
+        "firstObservation": "01-10-2003",
+        "lastObservation": "01-07-2016",
+        "updatedAt": "19-01-2017"
+      },
+      {
+        "seriesId": "F038.CNF.PPB2.20.10.N.2013.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad(+)/Necesidad(-) de financiamiento del gobierno general  (porcentaje del PIB referencia 2013)",
+        "englishTitle": "Net lending (+) / Net borrowing (-) of general government   (percentage of GDP reference 2013)",
+        "firstObservation": "01-10-2003",
+        "lastObservation": "01-07-2021",
+        "updatedAt": "06-01-2022"
+      },
+      {
+        "seriesId": "F038.CNF.PPB2.20.10.N.2018.CLP.T",
+        "frequencyCode": "QUARTERLY",
+        "spanishTitle": "Capacidad/Necesidad de financiamiento, ratios del gobierno general, referencia 2018 (porcentaje sobre el pib, promedio m\u00f3vil anual), nominal, ratio trimestral, porcentaje, no desestacionalizado",
+        "englishTitle": "Net lending / Net borrowing, ratios of general government, reference 2018 (percentage of gdp, annual moving average), nominal, ratio quarterly, percentage, not seasonally adjusted",
+        "firstObservation": "01-10-2003",
+        "lastObservation": "01-04-2026",
+        "updatedAt": "06-10-2026"
+      }
+    ],
+    "monthly_goods_trade": [
+      {
+        "seriesId": "F068.B1.FLU.A7.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, Concentrado de molibdeno,CIF",
+        "englishTitle": "Imports - Molybdenum oxide (CIF) ",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.B23.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, trigo y ma\u00edz,CIF",
+        "englishTitle": "Imports - Wheat and maize (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C1F.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo, carne, CIF",
+        "englishTitle": "Imports - Meat (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C1G.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo, otros alimentos, CIF",
+        "englishTitle": "Imports - Other food (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C1H.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, az\u00facar y endulzante, CIF",
+        "englishTitle": "Imports - Sugar and sweetener (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C24A.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo, bebidas y alcoholes,CIF",
+        "englishTitle": "Imports - Beverages and alcohols (CIF) ",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C411.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, Cart\u00f3n y papel elaborados, y otros ,CIF",
+        "englishTitle": "Imports - cardboard and paper made, and other (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C5.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, productos quimicos, CIF",
+        "englishTitle": "Imports - Chemicals (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C51A.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo, medicamentos, CIF",
+        "englishTitle": "Imports - Drugs (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C52A.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo, perfumes, CIF",
+        "englishTitle": "Imports - Perfumes (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C53A.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, abono, CIF",
+        "englishTitle": "Imports - Fertilizer (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C731.0.M.N.B.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo durable, Autom\u00f3viles, CIF",
+        "englishTitle": "Imports - Cars (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C732.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, Camiones y veh\u00edculos de carga, CIF",
+        "englishTitle": "Imports - Truck and cargo vehicles (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C733.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, buses, CIF",
+        "englishTitle": "Imports - Buses (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C734.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, otros vehiculos de transporte, CIF",
+        "englishTitle": "Imports - Other transports vehicles (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C741.0.M.N.B.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo durable, Computadores, CIF",
+        "englishTitle": "Imports - Computers (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C742.0.M.N.B.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo durable, Celulares, CIF",
+        "englishTitle": "Imports - Cell phone (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C743.0.M.N.B.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo durable, Televisores, CIF",
+        "englishTitle": "Imports - Televisions (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C744.0.M.N.B.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo durable, Electrodom\u00e9sticos, CIF",
+        "englishTitle": "Imports - Appliances (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C745.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, Aparatos de control el\u00e9ctrico,CIF",
+        "englishTitle": "Imports - Electric control devices (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C746.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, Motores, generadores y transformadores el\u00e9ctricos, CIF",
+        "englishTitle": "Imports - Motors, generators and electrical transformers (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C747.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, equipos computacionales, CIF",
+        "englishTitle": "Imports - Computer equipment (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C748.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, aparatos m\u00e9dicos, CIF",
+        "englishTitle": "Imports - Medical devices (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C749.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, Aparatos electr\u00f3nicos de comunicaci\u00f3n, CIF",
+        "englishTitle": "Imports - Electronic communication devices (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C751.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, Partes y piezas de maquinaria para la miner\u00eda y la construcci\u00f3n, CIF",
+        "englishTitle": "Imports - Parts and fittings for mining and construction (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C752.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, Partes y piezas de otras maquinarias y equipos, CIF",
+        "englishTitle": "Imports - Parts and other machinery and equipment (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C753.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, Maquinaria para la miner\u00eda y la construcci\u00f3n, CIF",
+        "englishTitle": "Imports - Machinery for mining and construction (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C754.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, motores y turbinas, CIF",
+        "englishTitle": "Imports - Motors and turbines (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C755.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, bombas y compresores, CIF",
+        "englishTitle": "Imports - Pumps and compressors",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C756.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, calderas de vapor, CIF",
+        "englishTitle": "Imports - Steam boilers (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C757.0.M.N.K.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de capital, CIF, otra maquinaria",
+        "englishTitle": "Imports - Other machinery (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C7A.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, productos met\u00e1licos, CIF",
+        "englishTitle": "Imports - Metal products (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C91.0.M.N.C.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo semidurable, vestuario, CIF",
+        "englishTitle": "Imports - Wearing apparel (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C92.0.M.N.C.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo semidurable, calzado, CIF",
+        "englishTitle": "Imports - Footwear (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.C93.0.M.N.J.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, resto bienes intermedios, fibra y tejido, CIF",
+        "englishTitle": "Imports - Fiber and fabric (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.P4.0.M.N.G.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes intermedios, energ\u00e9ticos, diesel, CIF",
+        "englishTitle": "Imports - Diesel (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.P5.0.M.N.G.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes intermedios, energ\u00e9ticos, carb\u00f3n mineral, CIF",
+        "englishTitle": "Imports - Carbon mineral (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.P6.0.M.N.G.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes intermedios, gas natural licuado, CIF",
+        "englishTitle": "Imports - Liquefied natural gas (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.P7.0.M.N.G.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes intermedios, gas natural gaseoso, CIF",
+        "englishTitle": "Imports - Natural gas (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.PA.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo, gasolina, CIF",
+        "englishTitle": "Imports - Gasoline (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.PB.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, otros bienes de consumo,gas licuado, CIF",
+        "englishTitle": "Imports - Liquefied gas (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.PC.0.M.N.G.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes intermedios, energ\u00e9ticos, aceite lubricante, CIF",
+        "englishTitle": "Imports - Lubricating oil (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.Z.0.M.N.C.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo semidurable, CIF",
+        "englishTitle": "Imports - Semi durable goods (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.FLU.Z.0.M.N.D.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Balanza de pagos, bienes, importaciones, bienes de consumo habitual, CIF",
+        "englishTitle": "Imports - Other consumer goods (CIF)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      },
+      {
+        "seriesId": "F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M",
+        "frequencyCode": "MONTHLY",
+        "spanishTitle": "Saldo Balanza Comercial (millones de d\u00f3lares)",
+        "englishTitle": "Trade Balance (millions of dollars)",
+        "firstObservation": "01-01-2003",
+        "lastObservation": "01-10-2026",
+        "updatedAt": "09-11-2026"
+      }
+    ],
+    "country_exports": []
+  }
+}

@@ -30,6 +30,10 @@ CANDIDATES = {
     "exports_china": "F068.B1.FLU.Z.0.C.N.Z.Z.CN.Z.6.0.M",
     "exports_us": "F068.B1.FLU.Z.0.C.N.Z.Z.US.Z.6.0.M",
     "exports_total": "F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M",
+    "general_government_balance": "F051.B04.FLU.G.C.CLP.T",
+    "general_government_debt": "F051.F2.STO.G.Z.CLP.T",
+    "nominal_gdp": "F032.PIB.FLU.N.CLP.EP18.Z.Z.0.T",
+    "general_government_balance_ratio": "F038.CNF.PPB2.20.10.N.2018.CLP.T",
 }
 
 
@@ -131,10 +135,11 @@ def read_candidate(token, item, metadata, last_date):
 
 
 def discover_candidates(metadata):
-    results = {"sovereign_risk": [], "general_government_fiscal": [], "monthly_goods_trade": []}
+    results = {"sovereign_risk": [], "general_government_fiscal": [],
+               "monthly_goods_trade": [], "country_exports": []}
     for entry in metadata.values():
         title = f"{entry.get('spanishTitle', '')} {entry.get('englishTitle', '')}".lower()
-        if re.search(r"\bcds\b|\bembi\b|credit default|sovereign spread|spread soberano", title):
+        if re.search(r"\bcds\b|\bembi\b|credit default|sovereign spread|spread soberano|riesgo pa.s", title):
             results["sovereign_risk"].append(public_metadata(entry))
         if ("general government" in title or "gobierno general" in title) and re.search(
                 r"gross debt|deuda bruta|net lending|net borrowing|endeudamiento neto|balance fiscal", title):
@@ -142,11 +147,21 @@ def discover_candidates(metadata):
         if entry.get("frequencyCode") == "MONTHLY" and re.search(
                 r"balanza comercial|trade balance|bienes.*importaciones|goods.*imports", title):
             results["monthly_goods_trade"].append(public_metadata(entry))
+        if "export" in title and re.search(r"china|estados unidos|united states", title):
+            results["country_exports"].append(public_metadata(entry))
     return results
 
 
 def main():
     token = os.environ.get("BCCH_API_TOKEN", "").strip()
+    local_env = Path(__file__).resolve().parents[1] / ".env"
+    if not token and local_env.is_file():
+        try:
+            from dotenv import dotenv_values
+        except ImportError:
+            print("Install local source-check dependencies with pip install -r research/requirements.txt")
+            return 2
+        token = (dotenv_values(local_env, interpolate=False).get("BCCH_API_TOKEN") or "").strip()
     if not token:
         print("BCCH_API_TOKEN is required for the authenticated source audit.")
         return 2

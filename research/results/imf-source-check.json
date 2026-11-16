@@ -1,0 +1,43 @@
+{
+  "purpose": "IMF source coverage check for dashboard planning",
+  "completed_at_utc": "2026-11-16T23:49:36+00:00",
+  "requests": [
+    {
+      "flow": "CPI",
+      "key": "CHL+USA.CPI._T.IX.M",
+      "url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/+/CHL+USA.CPI._T.IX.M?c%5BTIME_PERIOD%5D=ge%3A1976-01",
+      "status": "success",
+      "coverage": [
+        {
+          "country": "CHL",
+          "valid_observations": 610,
+          "first_period": "1976-01",
+          "latest_period": "2026-10",
+          "proposed_reference_period_valid_months": 60
+        },
+        {
+          "country": "USA",
+          "valid_observations": 608,
+          "first_period": "1976-01",
+          "latest_period": "2026-09",
+          "proposed_reference_period_valid_months": 60
+        }
+      ]
+    },
+    {
+      "flow": "ER",
+      "key": "CHL.XDC_USD.PA_RT.M",
+      "url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/ER/+/CHL.XDC_USD.PA_RT.M?c%5BTIME_PERIOD%5D=ge%3A1976-01",
+      "status": "success",
+      "coverage": [
+        {
+          "country": "CHL",
+          "valid_observations": 610,
+          "first_period": "1976-01",
+          "latest_period": "2026-10",
+          "proposed_reference_period_valid_months": 60
+        }
+      ]
+    }
+  ]
+}

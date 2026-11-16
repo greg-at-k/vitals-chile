@@ -4,7 +4,7 @@ Draft for review, 16 November 2026.
 
 The proposed series cover domestic activity, inflation, interest rates, public finances, exchange rates, and trade. The Central Bank of Chile is abbreviated BCCh and its statistical database is BDE. DIPRES is Chile's budget directorate.
 
-The tables distinguish economic definitions from access checks. Public metadata identifies most BDE series. Authenticated downloads will establish their current coverage and missing observations. The dashboard's latest observation dates will come from those downloads.
+The tables distinguish economic definitions from access checks. Authenticated source checks retrieved 16 of 18 candidate BCCh series. The two country-export codes returned API error −50. The [source audit](source-audit.md) records the results and latest valid periods. The dashboard's latest observation dates will come from downloaded observations.
 
 ## Activity and inflation
 
@@ -42,12 +42,12 @@ Both requested measures will cover general government, including the consolidate
 
 | Measure | Units and frequency | Preferred source | Proposed transformation |
 | --- | --- | --- | --- |
-| General government balance | Percent of GDP, quarterly trailing year | DIPRES general-government operations release and associated Excel data | Use published trailing-year net lending or borrowing as a share of trailing-year GDP. Positive values indicate surplus. |
-| Gross general government debt | Percent of GDP, quarterly | DIPRES general-government gross-debt release and associated Excel data | Use the published quarter-end stock-to-GDP ratio and retain its denominator definition. |
+| General government balance | Percent of GDP, quarterly trailing year | DIPRES amounts redistributed by BCCh, `F051.B04.FLU.G.C.CLP.T`, and nominal GDP `F032.PIB.FLU.N.CLP.EP18.Z.Z.0.T` | Sum four consecutive quarterly balance amounts and divide by matching trailing-year GDP after unit conversion. Verify against the DIPRES trailing-year ratio. Positive values indicate surplus. |
+| Gross general government debt | Percent of GDP, quarterly | DIPRES amounts redistributed by BCCh, `F051.F2.STO.G.Z.CLP.T`, and the same nominal GDP input | Divide quarter-end debt by matching trailing-year GDP after unit conversion. Verify against the DIPRES ratio and record vintage differences. |
 
-The general-government operations report includes quarterly, year-to-date, and trailing-year columns. The dashboard will use the trailing-year column consistently. Annual history is also available. The workbook's sheet structure, current download discovery, and historical continuity remain to be tested. [Quarterly operations](https://www.dipres.gob.cl/598/w3-propertyvalue-25270.html), [2026 Q2 report](https://www.dipres.gob.cl/598/articles-429191_version_PDF.pdf?ts=1790780517), [Annual operations](https://www.dipres.gob.cl/598/w3-propertyvalue-15495.html)
+The general-government operations report includes quarterly, year-to-date, and trailing-year columns. The dashboard will use a trailing-year balance consistently. Annual history is also available. Authenticated downloads of the proposed balance and GDP inputs succeeded through 2026 Q2. Missing balance observations require complete-quarter checks before summing. [Quarterly operations](https://www.dipres.gob.cl/598/w3-propertyvalue-25270.html), [2026 Q2 report](https://www.dipres.gob.cl/598/articles-429191_version_PDF.pdf?ts=1790780517), [Annual operations](https://www.dipres.gob.cl/598/w3-propertyvalue-15495.html)
 
-DIPRES publishes a separate quarterly general-government debt release. Its workbook provides the preferred national-source route. General-government debt has a different institutional coverage from central-government debt, so the parser must select the general-government total. [General-government debt releases](https://www.dipres.gob.cl/598/w3-propertyvalue-24801.html)
+DIPRES publishes a separate quarterly general-government debt release. Its figures will provide the original-source comparison for the BCCh delivery route. General-government debt has a different institutional coverage from central-government debt. The general-government total downloaded successfully through 2026 Q2. [General-government debt releases](https://www.dipres.gob.cl/598/w3-propertyvalue-24801.html)
 
 ## Copper and trade
 
@@ -59,7 +59,7 @@ DIPRES publishes a separate quarterly general-government debt release. Its workb
 | US share of goods exports | Percent, monthly trailing year | BCCh exports to US, `F068.B1.FLU.Z.0.C.N.Z.Z.US.Z.6.0.M` | Apply the same formula using exports to the US. |
 | Total goods exports input | Millions of US dollars FOB, monthly | BCCh, `F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M` | Use as the common denominator after checking compatibility with the destination series. |
 
-Country-series identifiers were read from the public BCCh export table. Coverage, revision treatment, and the denominator's scope need checking with downloaded data and source notes. The trailing-year calculation will require twelve consecutive months for the destination and denominator. A gap remains visible until complete inputs are available. [Country export table](https://si3.bcentral.cl/siete/ES/Siete/Canasta?idCanasta=XCD1N2215), [Total exports metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M)
+Country-series identifiers were read from the public BCCh export table, but both returned API error −50 and are absent from the authenticated monthly catalog. The legacy downloadable country workbook ends in February 2021. A current destination source remains to be selected. The total-export input downloaded through October 2026. The trailing-year calculation will require twelve consecutive months for each destination and a compatible denominator. [Country export table](https://si3.bcentral.cl/siete/ES/Siete/Canasta?idCanasta=XCD1N2215), [Total exports metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M)
 
 The monthly balance identifier's name alone does not settle whether it already incorporates a transformation. Resolve this before calculating a trailing sum. Verify FOB import and export valuation against the published monthly trade tables. [Balance metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M), [Official trade workbooks](https://si3.bcentral.cl/estadisticas/Principal1/Excel/SE/COMEX/excel.html), [Copper metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F019.PPB.PRE.40.M)
 
@@ -69,12 +69,12 @@ The main comparison will use monthly actual and historical-benchmark-implied Chi
 
 | Input | Units and frequency | Source and key | Access check |
 | --- | --- | --- | --- |
-| Monthly actual exchange rate | CLP per USD, monthly period average | IMF ER, `CHL.XDC_USD.PA_RT.M` | HTTP 200 with January–March 2024 observations. |
-| Chile consumer prices | CPI index, monthly | IMF CPI, `CHL.CPI._T.IX.M` | HTTP 200 for the same sample. |
-| US consumer prices | CPI index, monthly | IMF CPI, `USA.CPI._T.IX.M` | HTTP 200 for the same sample. |
-| Daily observed dollar | CLP per USD, daily | BCCh, `F073.TCO.PRE.Z.D` | Public metadata confirmed. Authenticated download pending. |
+| Monthly actual exchange rate | CLP per USD, monthly period average | IMF ER, `CHL.XDC_USD.PA_RT.M` | Downloaded history from January 1976 through October 2026. |
+| Chile consumer prices | CPI index, monthly | IMF CPI, `CHL.CPI._T.IX.M` | Downloaded history from January 1976 through October 2026. |
+| US consumer prices | CPI index, monthly | IMF CPI, `USA.CPI._T.IX.M` | Downloaded history from January 1976 through September 2026, with gaps elsewhere in the history. |
+| Daily observed dollar | CLP per USD, daily | BCCh, `F073.TCO.PRE.Z.D` | Authenticated download through 16 November 2026. |
 
-These IMF keys and the calculation come from the user's Salamanca project. The source tests returned three monthly observations per input on 16 November 2026. Full history, flags, and current last-observation dates remain to be downloaded. [IMF API information](https://data.imf.org/en/Resource-Pages/IMF-API), [Salamanca methodology](https://github.com/greg-at-k/salamanca), [Daily-dollar metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F073.TCO.PRE.Z.D)
+These IMF keys and the calculation come from the user's Salamanca project. Source tests on 16 November 2026 retrieved the histories from January 1976 onward. Each input has sixty valid observations in the proposed January 2015–December 2019 reference period. The latest possible shared month is September 2026. Missing periods and source flags require preservation in the final data adapter. [IMF API information](https://data.imf.org/en/Resource-Pages/IMF-API), [Salamanca methodology](https://github.com/greg-at-k/salamanca), [Daily-dollar metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F073.TCO.PRE.Z.D)
 
 Let `E[t]` be CLP per USD, `P_US[t]` the US CPI, and `P_CL[t]` Chile's CPI. Calculate the bilateral real rate as `q[t] = E[t] × P_US[t] / P_CL[t]`. Larger values indicate real peso depreciation.
 
@@ -94,9 +94,9 @@ The expanded scope contains more than eight economic measures, even after recogn
 
 ## Remaining source checks
 
-1. Exercise BDE authentication through GitHub Actions using `BCCH_API_TOKEN` and retain public response summaries.
-2. Verify current coverage, source notes, and one observation for each selected BDE series.
+1. Resolve the rejected country-export candidates using a current primary source.
+2. Verify source notes and one observation for each selected series against its original release. Download coverage is recorded in the source audit.
 3. Resolve the trade-balance transformation and the export denominator's compatibility.
-4. Inspect DIPRES fiscal workbooks and verify published ratios against their accompanying releases.
+4. Verify fiscal units, denominator vintages, and calculated ratios against DIPRES releases.
 5. Establish a reliable automated sovereign-risk source and its publication permissions.
-6. Download full Chile and US IMF histories and check source flags and benchmark coverage.
+6. Preserve IMF source flags and gaps, and review the proposed benchmark whose sixty months have complete coverage.
