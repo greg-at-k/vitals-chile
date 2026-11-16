@@ -42,8 +42,16 @@ def request_json(token, parameters):
     for attempt in range(3):
         try:
             with urlopen(f"{ENDPOINT}?{query}", timeout=35) as response:
-                payload = json.load(response)
-            if payload.get("Codigo") != 0:
+                raw = response.read()
+            try:
+                body = raw.decode("utf-8-sig")
+            except UnicodeDecodeError:
+                body = raw.decode("windows-1252")
+            payload = json.loads(body)
+            code = payload.get("Codigo")
+            if code not in (0, "0"):
+                if isinstance(code, int):
+                    raise SourceError(f"API returned response code {code}")
                 raise SourceError("API returned an unsuccessful response code")
             return payload
         except HTTPError as error:
