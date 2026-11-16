@@ -1,0 +1,28 @@
+name: Check statistical sources
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Central Bank metadata and observations
+        env:
+          BCCH_API_TOKEN: ${{ secrets.BCCH_API_TOKEN }}
+        run: python research/check_bcch_sources.py
+      - name: Save public source-check results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-check-results
+          path: research/results/bcch-source-check.json
+          if-no-files-found: warn
