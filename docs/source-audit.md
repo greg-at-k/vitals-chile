@@ -51,7 +51,9 @@ The daily, monthly, and quarterly API catalogs did not reveal a CDS or EMBI spre
 
 ## Exchange rate inputs
 
-Public IMF requests retrieved monthly histories from January 1976 onward. Chile CPI and CLP per USD extend through October 2026. US CPI extends through September 2026. Each input has all sixty monthly observations in the proposed January 2015–December 2019 reference period. The latest possible shared month is September 2026. Source flags and historical gaps need to be retained by the final adapter. The [IMF coverage report](../research/results/imf-source-check.json) records the checks.
+Public IMF requests retrieved monthly histories from January 1976 onward. Chile CPI and CLP per USD extend through October 2026. US CPI extends through September 2026. The [initial IMF coverage report](../research/results/imf-source-check.json) records the 16 November checks.
+
+The user selected a trailing 30-year benchmark on 17 November. A fresh check identifies October 1996–September 2026 as the current window. It contains 359 valid shared observations and one missing required-input month, October 2025. The arithmetic mean excludes that month, and the chart will retain the gap. The [benchmark check](../research/results/rer-benchmark-check.json) records the dates, valid count, and an independently checked identity relating actual and implied FX to the real index.
 
 ## Evidence scope
 

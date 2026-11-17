@@ -1,6 +1,6 @@
 # Chile dashboard refresh and verification plan
 
-Draft for review, 16 November 2026.
+Updated following user review, 17 November 2026.
 
 GitHub Actions will retrieve and validate source data. A versioned public dataset will supply Streamlit both locally and on Community Cloud. The repository's `BCCH_API_TOKEN` secret will be available to the downloader during its GitHub job.
 
@@ -41,7 +41,22 @@ The source audit differs from the eventual scheduled dashboard refresh in its co
 
 ## Proposed schedule
 
-Proposed schedule for the completed downloader is daily at 23:17 UTC, with an additional manual trigger. This gives monthly and quarterly releases regular coverage and records a daily check of market data. The time remains a choice for review. The assignment explicitly requests a regular refresh schedule.
+The assignment requests a regular schedule. The proposed frequency now follows the source data's frequency, with manual refresh available on demand.
+
+| Data | Proposed automatic check |
+| --- | --- |
+| Policy rate, nominal bond yields, inflation compensation, daily FX | Once each weekday at 23:17 UTC |
+| GDP, monthly inflation, copper, trade, fiscal inputs, monthly IMF CPI and FX | Once weekly on Friday at 23:17 UTC |
+
+This is a recommendation for review. A single weekly refresh for all series, plus manual refresh, is also compatible with a regular schedule. A weekday market check keeps the snapshot and daily FX more current. Per-series observation and retrieval dates identify the age of every input.
+
+## Request volume and pacing
+
+BCCh states a limit of five series per second per account and no daily request cap. The source audit now runs sequentially and pauses one second before each API request. This is comfortably below the published limit. [BCCh API limits](https://si3.bcentral.cl/estadisticas/Principal1/Web_Services/ayuda_soporte.html)
+
+Routine refreshes retrieve configured series. Catalog discovery supports initial setup and source repairs. Normal app visits read the saved dataset and cache, so visitor count does not multiply source requests. Concurrent manual refresh requests will share one job queue. Transient failures will have bounded retries, and HTTP 429 responses will honor the provider's retry instructions.
+
+An IMF numerical quota has yet to be verified from primary documentation. The proposed IMF workload is a few paced requests per week. Any additional provider's limits will be checked when its source is selected.
 
 Scheduled GitHub Actions can be delayed, so the app will report actual successful retrieval times. The workflow should use one concurrency group to serialize publication. [GitHub schedule behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 
@@ -51,11 +66,11 @@ The external job also allows data retrieval while a Community Cloud app is hiber
 
 Each source adapter will verify the series identifier, expected frequency, date parsing, numeric values, and source status flags. Duplicate observations will require explicit resolution. Missing observations will retain gaps. Published data will preserve the provider's available historical revisions.
 
-The job will stage downloads and calculations before publication. All panels using shared inputs, including actual and implied exchange rates, will derive from the same staged inputs. A failed required source will preserve the previously published complete dataset. The attempt log will identify the failure, while the app continues to show the last successful dataset and its retrieval times.
+The job will stage due downloads and calculations before publication. Inputs due on a slower schedule retain their previous verified values and successful retrieval times. All panels using shared inputs, including actual and implied exchange rates, will derive from the same staged inputs. A failed required download will preserve the previously published complete dataset. The attempt log will identify the failure, while the app continues to show the last successful dataset and its retrieval times.
 
 The manifest will include a dataset version, publication time, last successful refresh, and per-series identifiers, units, frequency, coverage, retrieval time, source update date where available, source flags, and transformation details. Public source URLs will be sanitized.
 
-For the yield curve, choose the latest date with observations for all selected maturities. For the implied exchange rate and real index, align monthly CPI and FX inputs. For destination shares, require complete shared twelve-month windows and a positive export denominator.
+For the yield curve, choose the latest date with observations for all selected maturities. For the implied exchange rate and real index, align monthly CPI and FX inputs and calculate the benchmark from valid observations within the trailing 360 calendar months ending at the latest shared month. Preserve missing-input months. For destination shares, require complete shared twelve-month windows and a positive export denominator.
 
 An unchanged dataset after a successful source request is a successful refresh. Record both the check time and whether observations or values changed. A failed retrieval retains its previous successful retrieval timestamp.
 

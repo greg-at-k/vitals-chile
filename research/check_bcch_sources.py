@@ -1,7 +1,6 @@
 """Check candidate sources on a GitHub runner and save public summaries."""
 
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import json
 import math
@@ -15,6 +14,7 @@ from urllib.request import urlopen
 
 
 ENDPOINT = "https://si3.bcentral.cl/SieteRestWS/SieteRestWS.ashx"
+REQUEST_PAUSE_SECONDS = 1.0
 CANDIDATES = {
     "real_gdp": "F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T",
     "headline_inflation": "G073.IPC.V12.2023.M",
@@ -44,6 +44,7 @@ class SourceError(Exception):
 def request_json(token, parameters):
     query = urlencode({"token": token, **parameters})
     for attempt in range(3):
+        time.sleep(REQUEST_PAUSE_SECONDS)
         try:
             with urlopen(f"{ENDPOINT}?{query}", timeout=35) as response:
                 raw = response.read()
@@ -166,15 +167,11 @@ def main():
         print("BCCH_API_TOKEN is required for the authenticated source audit.")
         return 2
     started_at = datetime.now(timezone.utc)
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        catalogs = list(executor.map(lambda frequency: read_catalog(token, frequency),
-                                     ("DAILY", "MONTHLY", "QUARTERLY")))
+    catalogs = [read_catalog(token, frequency) for frequency in ("DAILY", "MONTHLY", "QUARTERLY")]
     metadata = {entry["seriesId"]: entry for catalog in catalogs
                 for entry in catalog["entries"] if entry.get("seriesId")}
     last_date = started_at.date().isoformat()
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        results = list(executor.map(
-            lambda item: read_candidate(token, item, metadata, last_date), CANDIDATES.items()))
+    results = [read_candidate(token, item, metadata, last_date) for item in CANDIDATES.items()]
     success = all(catalog["status"] == "success" for catalog in catalogs)
     success = success and all(result["status"] == "success" for result in results)
     report = {

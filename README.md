@@ -24,7 +24,9 @@ Local environment files and Streamlit secrets are covered by `.gitignore`. Git i
 
 The proposed scope includes GDP, headline and core inflation, the policy rate, a nominal yield-curve snapshot, government balance and gross debt, copper, nominal and bilateral real exchange rates, actual versus historical-benchmark-implied CLP per USD, goods trade balance, export shares for China and the US, sovereign risk, and inflation compensation.
 
-The assignment specifies 4–8 indicators. This expanded scope needs an explicit submission decision. Chart grouping and derived views will be documented transparently.
+The 17 November review confirms the overview cards, section order, and a chart window starting in 2010. The real exchange-rate benchmark uses the trailing 30 years, with a short visible explanation. The yield curve displays observed values and the numerical spread for viewer interpretation.
+
+The assignment specifies 4–8 indicators. The current proposal contains 15 headline indicators when the yield curve is counted as one item, or 17 when its three maturities are counted separately. The implied FX line and curve spread are derived views. Submission scope remains open.
 
 Authenticated BCCh checks retrieved 16 of 18 candidate series on 16 November 2026. The two rejected country-export codes need an alternative current source. Chile and US IMF CPI and Chile monthly FX sample requests also succeeded. Sovereign-risk access remains unresolved. See the [source audit](docs/source-audit.md).
 

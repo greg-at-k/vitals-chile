@@ -1,8 +1,8 @@
 # Chile dashboard wireframe
 
-Draft for review, 16 November 2026.
+Design updated following user review, 17 November 2026.
 
-The proposed Streamlit layout gives readers a quick view of Chile's economy, then space to inspect rates, public finances, and the external sector. Chart metadata and economic definitions stay close to the relevant plots.
+The reviewed Streamlit layout gives readers a quick view of Chile's economy, then space to inspect rates, public finances, and the external sector. The overview cards and section order are agreed. Chart metadata and economic definitions stay close to the relevant plots.
 
 ## Desktop layout
 
@@ -56,7 +56,7 @@ The yield curve uses the latest date shared by its required maturities. All plot
 
 The maturity axis is numerical, preserving the unequal distance from 2 to 5 years and 5 to 10 years. Visible points identify observed maturities. A simple connecting line joins them.
 
-Shape labels will distinguish upward, downward, flat, and mixed patterns once a flatness threshold is agreed. A short caption connects flattening and inversion with closer attention to the growth outlook. Units and the exact spread allow interpretation alongside that label.
+Show the observed yields, snapshot date, and numerical 10-year minus 2-year spread. Labels identify maturities, values, and units. The plot supplies the information for viewers to interpret the curve's shape and economic implications.
 
 The sovereign-risk chart awaits a confirmed source. Its eventual heading must name the chosen measure, such as a five-year sovereign CDS spread or a particular bond spread.
 
@@ -79,9 +79,8 @@ ACTUAL AND IMPLIED EXCHANGE RATE                         full width
 CLP per USD
 Actual monthly average  ———————————
 Historical benchmark implied  - - - - -
-Reference period [Jan 2015–Dec 2019, proposed]
-
-About the implied rate [expandable explanation and arithmetic]
+Reference period [Trailing 30 years through latest shared CPI and FX month]
+Implied line holds the real exchange rate at that period's average.
 
 BILATERAL REAL EXCHANGE RATE      COPPER
 Reference period average = 100   US dollars per pound
@@ -92,9 +91,9 @@ Monthly bars                    China and United States
 Trailing year view control      Trailing year percentages
 ```
 
-The actual-versus-implied chart anchors the real exchange-rate discussion in the familiar price of a US dollar. A short explanation will state that a higher actual line means the peso is weaker in real terms relative to the selected historical benchmark.
+The actual-versus-implied chart anchors the real exchange-rate discussion in the familiar price of a US dollar. One short caption defines the implied line. Calculation details remain available in source metadata and downloads.
 
-The benchmark period is independent of the viewing window. A reader must explicitly change the benchmark to recalculate the implied line. Both the chart and downloads identify the active benchmark.
+The default benchmark covers the last 360 calendar months ending at the latest month shared by Chile CPI, US CPI, and monthly FX. The benchmark advances when a new shared monthly observation arrives. Zooming changes the viewing window. Both the chart and downloads identify the benchmark dates and valid observation count.
 
 Actual exchange rates can extend beyond the latest common CPI month. The implied and real-index lines end where their required inputs end. The display will identify both coverage dates.
 
@@ -125,10 +124,10 @@ Charts should have generous width, limited grid lines, readable axes, and consis
 
 On narrow screens, overview cards wrap into two columns and chart columns stack vertically. The actual-versus-implied exchange-rate chart remains a single full-width panel. Native navigation should remain easy to reach.
 
-## Review choices
+## Review decisions
 
-- Confirm the overview card selection and section order.
-- Review the proposed 2010 default start and 2015–2019 exchange-rate benchmark after checking coverage.
-- Choose how much exchange-rate explanation should be visible before expanding details.
-- Review the yield-curve shape labels and a possible flatness threshold.
-- Resolve the expanded scope against the assignment's indicator range.
+- Overview cards and section order are agreed.
+- The default chart window begins in 2010. The exchange-rate benchmark uses the trailing 30 years.
+- The visible exchange-rate explanation is a short caption. Source metadata records the transformations.
+- The yield curve presents yields, maturities, the snapshot date, and the numerical spread for viewer interpretation.
+- The proposed scope contains 15 headline indicators when the curve is counted as one item, or 17 when its three maturities are counted separately. The implied exchange-rate line and curve spread are derived views. Scope against the assignment's 4–8 range remains open.

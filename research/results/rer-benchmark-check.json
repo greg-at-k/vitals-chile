@@ -1,0 +1,24 @@
+{
+  "purpose": "Validate the user-selected trailing 30-year bilateral real exchange-rate benchmark",
+  "checked_at_utc": "2026-11-17T16:49:55+00:00",
+  "source_urls": [
+    "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/+/CHL+USA.CPI._T.IX.M?c%5BTIME_PERIOD%5D=ge%3A1976-01",
+    "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/ER/+/CHL.XDC_USD.PA_RT.M?c%5BTIME_PERIOD%5D=ge%3A1976-01"
+  ],
+  "benchmark_start": "1996-10",
+  "benchmark_end": "2026-09",
+  "calendar_months": 360,
+  "valid_shared_months": 359,
+  "missing_shared_months": [
+    "2025-10"
+  ],
+  "missing_data_treatment": "Exclude months with missing required inputs from the arithmetic mean and retain chart gaps",
+  "mean_q": 1034.4709599736982,
+  "latest_example": {
+    "month": "2026-09",
+    "actual_clp_per_usd": 947.913,
+    "implied_clp_per_usd": 760.4538743171174,
+    "real_index": 124.65095280778463
+  },
+  "arithmetic_identity_check": "passed"
+}

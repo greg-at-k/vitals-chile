@@ -1,10 +1,24 @@
 # Chile dashboard data catalog
 
-Draft for review, 16 November 2026.
+Updated following user review, 17 November 2026.
 
 The proposed series cover domestic activity, inflation, interest rates, public finances, exchange rates, and trade. The Central Bank of Chile is abbreviated BCCh and its statistical database is BDE. DIPRES is Chile's budget directorate.
 
 The tables distinguish economic definitions from access checks. Authenticated source checks retrieved 16 of 18 candidate BCCh series. The two country-export codes returned API error −50. The [source audit](source-audit.md) records the results and latest valid periods. The dashboard's latest observation dates will come from downloaded observations.
+
+## Indicator count
+
+| Area | Headline indicators | Count |
+| --- | --- | --- |
+| Growth | Real GDP growth | 1 |
+| Inflation | Headline and core inflation | 2 |
+| Rates and sovereign risk | Policy rate, nominal yield curve, inflation compensation, sovereign risk | 4 |
+| Public finances | Government balance and gross debt | 2 |
+| Exchange rates | Nominal and bilateral real exchange rates | 2 |
+| Commodities and trade | Copper, goods trade balance, export shares for China and the US | 4 |
+| Total | Yield curve counted as one item | 15 |
+
+Counting the three yield-curve maturities individually raises the total to 17. The implied nominal exchange-rate line and 10-year minus 2-year spread are derived views. Calculation inputs, such as nominal GDP in a fiscal denominator, also explain why API source-check counts differ from the dashboard inventory. The assignment's 4–8 range remains a scope decision.
 
 ## Activity and inflation
 
@@ -32,7 +46,7 @@ Public rate tables identify the nominal benchmarks as BCP/BTP. The older search 
 
 Inflation compensation reflects expected inflation and premiums. BCCh publishes a dedicated five-year bond series, making it a promising source. Confirm the exact calculation and continuity before selecting it for the app. [Series metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F022.BOSP.TAS.AN05.Z.Z.D), [BCCh explanation](https://www.bcentral.cl/documents/33528/133214/and_01042022.pdf/cf0b235a-e26f-7944-d1aa-f421c2c409fa?t=1648820928677)
 
-The curve's shape is a signal about the outlook for interest rates and economic conditions. The interface will show the curve, its observation date, and its numerical slope. A three-point curve can have a hump, so the description should account for both adjacent segments. A numerical threshold for calling the curve flat remains a design choice. [Yield-curve explanation](https://www.rba.gov.au/education/resources/explainers/bonds-and-the-yield-curve.html)
+The interface will show observed yields by maturity, the common observation date, and the numerical 10-year minus 2-year spread. Economic interpretation is left to the viewer. The maturity axis preserves the distances between the observed tenors.
 
 A sovereign bond spread must compare instruments with compatible currency and maturity. A CDS series needs its contract convention. Searches of public BDE metadata for CDS and EMBI have yet to establish a usable series. This panel remains in the proposed scope while access is investigated. [Ministry of Finance definition of country risk](https://old.hacienda.cl/preguntas-frecuentes/inversionistas/que-es-el-riesgo-pais.html)
 
@@ -74,19 +88,19 @@ The main comparison will use monthly actual and historical-benchmark-implied Chi
 | US consumer prices | CPI index, monthly | IMF CPI, `USA.CPI._T.IX.M` | Downloaded history from January 1976 through September 2026, with gaps elsewhere in the history. |
 | Daily observed dollar | CLP per USD, daily | BCCh, `F073.TCO.PRE.Z.D` | Authenticated download through 16 November 2026. |
 
-These IMF keys and the calculation come from the user's Salamanca project. Source tests on 16 November 2026 retrieved the histories from January 1976 onward. Each input has sixty valid observations in the proposed January 2015–December 2019 reference period. The latest possible shared month is September 2026. Missing periods and source flags require preservation in the final data adapter. [IMF API information](https://data.imf.org/en/Resource-Pages/IMF-API), [Salamanca methodology](https://github.com/greg-at-k/salamanca), [Daily-dollar metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F073.TCO.PRE.Z.D)
+These IMF keys and the calculation come from the user's Salamanca project. Source tests retrieved the histories from January 1976 onward. The latest shared month in the 17 November check is September 2026. The trailing 30-year window is October 1996–September 2026 and contains 359 valid shared months. October 2025 lacks a required input. Preserve that gap and exclude it from the benchmark mean. [Benchmark check](../research/results/rer-benchmark-check.json), [IMF API information](https://data.imf.org/en/Resource-Pages/IMF-API), [Salamanca methodology](https://github.com/greg-at-k/salamanca)
 
 Let `E[t]` be CLP per USD, `P_US[t]` the US CPI, and `P_CL[t]` Chile's CPI. Calculate the bilateral real rate as `q[t] = E[t] × P_US[t] / P_CL[t]`. Larger values indicate real peso depreciation.
 
 For a reference period B, calculate `q_bar` as the arithmetic mean of valid monthly `q` values in B. Then calculate the real index as `100 × q[t] / q_bar` and the implied nominal exchange rate as `E_implied[t] = q_bar × P_CL[t] / P_US[t]`.
 
-The proposed reference period is January 2015–December 2019, subject to coverage and user review. Zooming changes the visible dates. An explicit benchmark control changes the normalization and implied line. The chart will describe the implied rate as the rate consistent with the reference period's average bilateral real exchange rate.
+The agreed default reference period is the trailing 360 calendar months ending at the latest month shared by the three inputs. Average valid monthly real rates within that window and retain gaps in the charts. The window advances with new shared monthly data. Zooming changes the visible dates independently. The chart's short caption defines the implied line as the nominal rate consistent with the reference period's average bilateral real exchange rate.
 
 Both actual and implied lines share one CLP-per-USD axis. The tooltip will show the month, both rates, the reference period, and the real index. When the actual rate exceeds the implied rate, the peso is weaker in real terms relative to that historical benchmark. The benchmark alone establishes a historical comparison.
 
 ## Sample and metadata rules
 
-Proposed default viewing window is 2010 onward. Full history and shorter 5- and 10-year views will be available where coverage permits. Fiscal quarterly history may begin later. The catalog will record each series' actual coverage after download.
+The agreed default viewing window is 2010 onward. Full history and shorter 5- and 10-year views will be available where coverage permits. The real exchange-rate benchmark uses its separate trailing 30-year history. Fiscal quarterly history may begin later. The catalog records each series' actual coverage after download.
 
 Every chart will display units, native frequency, source, latest observation date, and transformation. A monthly point will be labeled by month and a quarterly point by quarter. Provider release or update dates and retrieval timestamps will be stored separately.
 
@@ -99,4 +113,4 @@ The expanded scope contains more than eight economic measures, even after recogn
 3. Resolve the trade-balance transformation and the export denominator's compatibility.
 4. Verify fiscal units, denominator vintages, and calculated ratios against DIPRES releases.
 5. Establish a reliable automated sovereign-risk source and its publication permissions.
-6. Preserve IMF source flags and gaps, and review the proposed benchmark whose sixty months have complete coverage.
+6. Preserve IMF source flags and gaps, including the missing month identified in the trailing 30-year benchmark check.

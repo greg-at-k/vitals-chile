@@ -6,6 +6,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: bcch-source-access
+  cancel-in-progress: false
+
 jobs:
   check-sources:
     runs-on: ubuntu-latest
