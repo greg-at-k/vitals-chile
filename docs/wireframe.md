@@ -2,6 +2,10 @@
 
 Design updated following user review, 17 November 2026.
 
+The interactive design preview uses a saved 17 November source snapshot. Its tabs and three viewing windows support design review; source refresh is disabled. Daily history is sampled to monthly last observations for the preview, while the overview quotes and yield curve retain their daily dates. Fiscal balance and trade balance currently use lines in the preview; the planned monthly/quarterly bar treatment remains to be reviewed. Full/custom windows, downloads, refresh logs, and the source-verification table await Streamlit implementation. Sovereign risk remains a source-pending panel.
+
+Automated validation checked all 12 chart configurations and 22 alternate date-window configurations. Browser inspection was unavailable in this session, so rendered layout and runtime interactions have not been verified.
+
 The reviewed Streamlit layout supports the user's personal monitoring of Chile's economy, with space to inspect rates, public finances, and the external sector. The overview cards, section order, and full indicator scope are agreed. Chart metadata and economic definitions stay close to the relevant plots.
 
 ## Desktop layout

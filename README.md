@@ -28,7 +28,9 @@ The 17 November review confirms the overview cards, section order, and a chart w
 
 The agreed personal-use scope includes all 15 headline indicators, or 17 when the curve's three maturities are counted separately, plus the implied FX line and curve spread as derived views. Build and refine this full dashboard first. A later assignment deliverable will address the 4–8-indicator requirement through a selected view or a separate tool and repository. Its format will be decided at that stage.
 
-Authenticated BCCh checks retrieved 16 of 18 candidate series on 16 November 2026. The two rejected country-export codes need an alternative current source. Chile and US IMF CPI and Chile monthly FX sample requests also succeeded. Sovereign-risk access remains unresolved. See the [source audit](docs/source-audit.md).
+Authenticated BCCh checks retrieved 16 of 18 candidate series on 16 November 2026. A current official workbook, verified on 17 November, supplies China and US exports and a matching total-export denominator, resolving the rejected country API candidates. Chile and US IMF CPI and Chile monthly FX requests also succeeded. Sovereign-risk access remains unresolved. See the [source audit](docs/source-audit.md).
+
+An interactive design preview uses a saved 17 November source snapshot. It supports layout review before Streamlit implementation; its refresh button is disabled. Daily historical charts use monthly last observations in this preview, while the cards and yield curve retain their dated daily observations.
 
 ## Run the source checks locally
 
@@ -39,4 +41,4 @@ The local research environment loads `BCCH_API_TOKEN` from `.env` when it is abs
 .\.venv\Scripts\python.exe research/check_bcch_sources.py
 ```
 
-The current audit reports `needs_attention` while the two country-export candidates fail. Its JSON output includes coverage, observation samples, and public status information. The manually triggered [GitHub source audit](https://github.com/greg-at-k/vitals-chile/actions/workflows/source-audit.yml) uses the repository secret.
+The candidate API audit still reports `needs_attention` for the two rejected country codes. The selected country-data route is now the separate public workbook documented in the source audit. The API audit's JSON output includes coverage, observation samples, and public status information. The manually triggered [GitHub source audit](https://github.com/greg-at-k/vitals-chile/actions/workflows/source-audit.yml) uses the repository secret.

@@ -1,0 +1,38 @@
+{
+  "checked_at_utc": "2026-11-17T17:35:05+00:00",
+  "source_url": "https://si3.bcentral.cl/estadisticas/Principal1/excel/SE/COMEX/Excel/Mensual/02_Balanza_comercial_mensual_por_paises.xlsx",
+  "status": "success",
+  "sheet": "X_por_pa\u00eds",
+  "source_rows": {
+    "us": 11,
+    "china": 51,
+    "total": 75
+  },
+  "units": "US dollars millions FOB",
+  "first_month": "2003-01",
+  "latest_month": "2026-10",
+  "monthly_observations": 286,
+  "max_difference_between_country_and_aggregate_export_total": 1.3752651284448802e-07,
+  "latest_monthly_exports": {
+    "us": 1843.23846678217,
+    "china": 2588.69590974208,
+    "total": 10287.2957845387
+  },
+  "latest_trailing_year_shares": [
+    [
+      "2026-10",
+      "China",
+      33.37012406124295,
+      41764.32550454674,
+      125154.84038326686
+    ],
+    [
+      "2026-10",
+      "United States",
+      16.793163251011862,
+      21017.45666210532,
+      125154.84038326686
+    ]
+  ],
+  "api_trade_balance_difference_latest_month": -1.2761120160575956e-08
+}

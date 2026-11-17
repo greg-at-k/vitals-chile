@@ -4,7 +4,7 @@ Updated following user review, 17 November 2026.
 
 The proposed series cover domestic activity, inflation, interest rates, public finances, exchange rates, and trade. The Central Bank of Chile is abbreviated BCCh and its statistical database is BDE. DIPRES is Chile's budget directorate.
 
-The tables distinguish economic definitions from access checks. Authenticated source checks retrieved 16 of 18 candidate BCCh series. The two country-export codes returned API error −50. The [source audit](source-audit.md) records the results and latest valid periods. The dashboard's latest observation dates will come from downloaded observations.
+The tables distinguish economic definitions from access checks. Authenticated source checks retrieved 16 of 18 candidate BCCh series. The two country-export API codes returned error −50; a current official workbook now supplies these inputs. The [source audit](source-audit.md) records the results and latest valid periods. The dashboard's latest observation dates will come from downloaded observations.
 
 ## Indicator count
 
@@ -68,14 +68,14 @@ DIPRES publishes a separate quarterly general-government debt release. Its figur
 | Measure | Units and frequency | Source and identifier | Proposed transformation |
 | --- | --- | --- | --- |
 | Refined copper price | US dollars per pound, monthly | BCCh, `F019.PPB.PRE.40.M`, refined copper BML | Use the published monthly price. Retain the original price provider in the metadata. |
-| Goods trade balance | Millions of US dollars, monthly | BCCh, `F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M` identifies a monthly trade-balance series | Confirm its precise transformation and FOB basis before use. Proposed display has monthly bars and a trailing 12-month sum. |
-| China's share of goods exports | Percent, monthly trailing year | BCCh exports to China, `F068.B1.FLU.Z.0.C.N.Z.Z.CN.Z.6.0.M` | Divide trailing 12-month exports to China by trailing 12-month total exports and multiply by 100. |
-| US share of goods exports | Percent, monthly trailing year | BCCh exports to US, `F068.B1.FLU.Z.0.C.N.Z.Z.US.Z.6.0.M` | Apply the same formula using exports to the US. |
-| Total goods exports input | Millions of US dollars FOB, monthly | BCCh, `F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M` | Use as the common denominator after checking compatibility with the destination series. |
+| Goods trade balance | Millions of US dollars FOB, monthly | BCCh, `F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M`; current trade workbook | Raw monthly exports less imports. Proposed display has monthly bars and a trailing 12-month sum. |
+| China's share of goods exports | Percent, monthly trailing year | BCCh current monthly country-trade workbook, `X_por_país` sheet, China row | Divide trailing 12-month exports to China by the same sheet's trailing 12-month Total and multiply by 100. |
+| US share of goods exports | Percent, monthly trailing year | Same workbook and sheet, United States row | Apply the same formula using exports to the US. |
+| Total goods exports input | Millions of US dollars FOB, monthly | Same workbook and sheet, Total row | Common denominator for both destinations. The API total-export series remains available for cross-checking. |
 
-Country-series identifiers were read from the public BCCh export table, but both returned API error −50 and are absent from the authenticated monthly catalog. The legacy downloadable country workbook ends in February 2021. A current destination source remains to be selected. The total-export input downloaded through October 2026. The trailing-year calculation will require twelve consecutive months for each destination and a compatible denominator. [Country export table](https://si3.bcentral.cl/siete/ES/Siete/Canasta?idCanasta=XCD1N2215), [Total exports metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F068.B1.FLU.Z.0.C.N.Z.Z.Z.Z.6.0.M)
+The current workbook covers January 2003 through October 2026 in the 17 November check. Select countries by their labels and parse the year/month headers; row numbers are audit evidence rather than a permanent parser contract. Both shares require twelve consecutive months, use the same denominator, and retain missing periods. Rejected API identifiers and the obsolete workbook are documented in the source audit. [Official workbook index](https://si3.bcentral.cl/estadisticas/Principal1/enlaces/excel/SE/Excel_SE_Comercio.html), [Current country-trade workbook](https://si3.bcentral.cl/estadisticas/Principal1/excel/SE/COMEX/Excel/Mensual/02_Balanza_comercial_mensual_por_paises.xlsx)
 
-The monthly balance identifier's name alone does not settle whether it already incorporates a transformation. Resolve this before calculating a trailing sum. Verify FOB import and export valuation against the published monthly trade tables. [Balance metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M), [Official trade workbooks](https://si3.bcentral.cl/estadisticas/Principal1/Excel/SE/COMEX/excel.html), [Copper metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F019.PPB.PRE.40.M)
+The API's October 2026 balance matches the workbook's raw monthly FOB balance to rounding precision. Country-sheet Total exports also match the aggregate sheet over the full inspected history. The [trade check](../research/results/trade-source-check.json) records these comparisons and the latest trailing-year shares. [Balance metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M), [Copper metadata](https://si3.bcentral.cl/Search/Buscar/Index/?st=F019.PPB.PRE.40.M)
 
 ## Nominal and real exchange rates
 
@@ -108,9 +108,7 @@ Develop the full personal-use dashboard first. The assignment's 4–8-indicator 
 
 ## Remaining source checks
 
-1. Resolve the rejected country-export candidates using a current primary source.
-2. Verify source notes and one observation for each selected series against its original release. Download coverage is recorded in the source audit.
-3. Resolve the trade-balance transformation and the export denominator's compatibility.
-4. Verify fiscal units, denominator vintages, and calculated ratios against DIPRES releases.
-5. Establish a reliable automated sovereign-risk source and its publication permissions.
-6. Preserve IMF source flags and gaps, including the missing month identified in the trailing 30-year benchmark check.
+1. Verify source notes and one observation for every selected series against its original release. The trade check already provides a workbook comparison for the monthly balance.
+2. Verify fiscal units, denominator vintages, and calculated ratios against DIPRES releases before publishing them as verified dashboard figures.
+3. Establish a reliable automated sovereign-risk source and its publication permissions. The user has no confirmed commercial-data access.
+4. Preserve IMF source flags and gaps, including the missing month identified in the trailing 30-year benchmark check.
