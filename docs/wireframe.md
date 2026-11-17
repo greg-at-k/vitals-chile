@@ -2,7 +2,7 @@
 
 Design updated following user review, 17 November 2026.
 
-The reviewed Streamlit layout gives readers a quick view of Chile's economy, then space to inspect rates, public finances, and the external sector. The overview cards and section order are agreed. Chart metadata and economic definitions stay close to the relevant plots.
+The reviewed Streamlit layout supports the user's personal monitoring of Chile's economy, with space to inspect rates, public finances, and the external sector. The overview cards, section order, and full indicator scope are agreed. Chart metadata and economic definitions stay close to the relevant plots.
 
 ## Desktop layout
 
@@ -130,4 +130,4 @@ On narrow screens, overview cards wrap into two columns and chart columns stack 
 - The default chart window begins in 2010. The exchange-rate benchmark uses the trailing 30 years.
 - The visible exchange-rate explanation is a short caption. Source metadata records the transformations.
 - The yield curve presents yields, maturities, the snapshot date, and the numerical spread for viewer interpretation.
-- The proposed scope contains 15 headline indicators when the curve is counted as one item, or 17 when its three maturities are counted separately. The implied exchange-rate line and curve spread are derived views. Scope against the assignment's 4–8 range remains open.
+- The personal-use dashboard includes all 15 headline indicators, or 17 when the curve's maturities are counted separately, plus the derived views. A later assignment task will choose a 4–8-indicator view or develop a separate tool and repository.

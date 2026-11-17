@@ -18,7 +18,7 @@ The tables distinguish economic definitions from access checks. Authenticated so
 | Commodities and trade | Copper, goods trade balance, export shares for China and the US | 4 |
 | Total | Yield curve counted as one item | 15 |
 
-Counting the three yield-curve maturities individually raises the total to 17. The implied nominal exchange-rate line and 10-year minus 2-year spread are derived views. Calculation inputs, such as nominal GDP in a fiscal denominator, also explain why API source-check counts differ from the dashboard inventory. The assignment's 4–8 range remains a scope decision.
+Counting the three yield-curve maturities individually raises the total to 17. The implied nominal exchange-rate line and 10-year minus 2-year spread are derived views. Calculation inputs, such as nominal GDP in a fiscal denominator, also explain why API source-check counts differ from the dashboard inventory. The user has confirmed all 15 headline indicators for the personal-use dashboard.
 
 ## Activity and inflation
 
@@ -104,7 +104,7 @@ The agreed default viewing window is 2010 onward. Full history and shorter 5- an
 
 Every chart will display units, native frequency, source, latest observation date, and transformation. A monthly point will be labeled by month and a quarterly point by quarter. Provider release or update dates and retrieval timestamps will be stored separately.
 
-The expanded scope contains more than eight economic measures, even after recognizing derived exchange-rate views and the curve as related displays. Submission planning must address the assignment's stated range explicitly.
+Develop the full personal-use dashboard first. The assignment's 4–8-indicator deliverable will be considered afterward, using a selected view or a separate tool and repository as appropriate. Its final format is deferred to that later task.
 
 ## Remaining source checks
 

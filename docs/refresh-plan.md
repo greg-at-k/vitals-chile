@@ -2,7 +2,7 @@
 
 Updated following user review, 17 November 2026.
 
-GitHub Actions will retrieve and validate source data. A versioned public dataset will supply Streamlit both locally and on Community Cloud. The repository's `BCCH_API_TOKEN` secret will be available to the downloader during its GitHub job.
+The full personal-use dashboard is the current deliverable. GitHub Actions will retrieve and validate source data. A versioned public dataset will supply Streamlit both locally and on Community Cloud. The repository's `BCCH_API_TOKEN` secret will be available to the downloader during its GitHub job. An assignment-specific view or separate tool will be considered after the personal dashboard is developed.
 
 ## Data flow
 
@@ -41,7 +41,7 @@ The source audit differs from the eventual scheduled dashboard refresh in its co
 
 ## Proposed schedule
 
-The assignment requests a regular schedule. The proposed frequency now follows the source data's frequency, with manual refresh available on demand.
+For personal monitoring, the proposed frequency follows the source data's frequency, with manual refresh available on demand.
 
 | Data | Proposed automatic check |
 | --- | --- |
@@ -109,8 +109,9 @@ Retain a successful end-to-end refresh log with start and completion times, seri
 ## Implementation sequence
 
 1. Finish the source audit and update the data catalog with authenticated coverage and resolved definitions.
-2. Review the wireframe, proposed benchmark, scope, and presentation choices with the user.
+2. Finish the visual design using the reviewed layout, trailing 30-year benchmark, and agreed full personal-use scope.
 3. Implement source adapters and one validated public dataset publication.
 4. Build the agreed Streamlit charts and controls against the published data.
 5. Complete per-series verification and exercise an end-to-end refresh.
-6. Deploy to Streamlit Community Cloud and retain submission evidence.
+6. Deploy the personal-use dashboard to Streamlit Community Cloud and retain verification evidence.
+7. In a later task, decide whether the assignment needs a selected 4–8-indicator view or a separate tool and repository.

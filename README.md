@@ -1,6 +1,6 @@
 # Vitals Chile
 
-Planning for a public Chile economic dashboard deployed with Streamlit.
+Planning for a public Chile economic dashboard for personal monitoring, deployed with Streamlit.
 
 The dashboard will help readers assess Chile's growth, inflation, financing conditions, fiscal position, and exposure to external shocks. The current work covers source feasibility, economic definitions, layout, and refresh design.
 
@@ -26,7 +26,7 @@ The proposed scope includes GDP, headline and core inflation, the policy rate, a
 
 The 17 November review confirms the overview cards, section order, and a chart window starting in 2010. The real exchange-rate benchmark uses the trailing 30 years, with a short visible explanation. The yield curve displays observed values and the numerical spread for viewer interpretation.
 
-The assignment specifies 4–8 indicators. The current proposal contains 15 headline indicators when the yield curve is counted as one item, or 17 when its three maturities are counted separately. The implied FX line and curve spread are derived views. Submission scope remains open.
+The agreed personal-use scope includes all 15 headline indicators, or 17 when the curve's three maturities are counted separately, plus the implied FX line and curve spread as derived views. Build and refine this full dashboard first. A later assignment deliverable will address the 4–8-indicator requirement through a selected view or a separate tool and repository. Its format will be decided at that stage.
 
 Authenticated BCCh checks retrieved 16 of 18 candidate series on 16 November 2026. The two rejected country-export codes need an alternative current source. Chile and US IMF CPI and Chile monthly FX sample requests also succeeded. Sovereign-risk access remains unresolved. See the [source audit](docs/source-audit.md).
 
