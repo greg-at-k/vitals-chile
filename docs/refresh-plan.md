@@ -2,6 +2,8 @@
 
 Updated following user review, 17 November 2026.
 
+Implementation note: the first working version uses a single atomic `data/dashboard.json` file on `main`, rather than a separate data branch. The weekly Friday 23:17 UTC workflow refreshes all inputs and also accepts manual runs. The app reads this complete file with a five-minute cache and a bundled fallback. Its reload button reads published data; upstream refresh is triggered in GitHub. See [running instructions](running.md). The more detailed split-frequency schedule below remains a proposal, not the implemented schedule.
+
 The full personal-use dashboard is the current deliverable. GitHub Actions will retrieve and validate source data. A versioned public dataset will supply Streamlit both locally and on Community Cloud. The repository's `BCCH_API_TOKEN` secret will be available to the downloader during its GitHub job. An assignment-specific view or separate tool will be considered after the personal dashboard is developed.
 
 ## Data flow

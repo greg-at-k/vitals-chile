@@ -1,6 +1,10 @@
 # Vitals Chile
 
-Planning for a public Chile economic dashboard for personal monitoring, deployed with Streamlit.
+A Streamlit Chile economic dashboard for personal monitoring, with a public-source refresh pipeline.
+
+Run `python -m pip install -r requirements.txt`, then `python -m streamlit run streamlit_app.py`. See [running and deployment](docs/running.md) for local setup, refresh controls, storage, tests, and Community Cloud deployment.
+
+The implementation includes all available agreed indicators. Sovereign risk remains pending; original-release spot checks are incomplete. The app identifies these limitations. A GitHub workflow refreshes saved data weekly and on demand. Public hosting still requires deploying the repository through a Streamlit account.
 
 The dashboard will help readers assess Chile's growth, inflation, financing conditions, fiscal position, and exposure to external shocks. The current work covers source feasibility, economic definitions, layout, and refresh design.
 
